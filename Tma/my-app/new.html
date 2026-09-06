@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentorship Academy - The Spark</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .hero-mask {
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C20 0 0 20 0 50 C0 80 20 100 50 100 C80 100 100 80 100 50 C100 20 80 0 50 0 Z" fill="black"/></svg>');
+            mask-size: cover;
+            mask-position: center;
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M20,50 Q40,10 50,50 T80,50 Q60,90 50,50 T20,50 Z" fill="black"/></svg>');
+            -webkit-mask-size: 100% 100%;
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+        }
+        
+        /* Fallback for mask */
+        .hero-fallback-shape {
+             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#251a00",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffd9e4",
+                        "on-surface-variant": "#584048",
+                        "inverse-primary": "#ffb0cc",
+                        "secondary-fixed-dim": "#e9c263",
+                        "on-secondary-fixed-variant": "#5a4300",
+                        "on-primary-fixed-variant": "#8d0051",
+                        "outline": "#8b7078",
+                        "on-tertiary-container": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "inverse-on-surface": "#f2f1ec",
+                        "tertiary-fixed": "#e5e2e1",
+                        "tertiary-container": "#777676",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-secondary-container": "#785b00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e3",
+                        "surface-tint": "#b5106b",
+                        "secondary": "#775a00",
+                        "secondary-container": "#fed574",
+                        "primary": "#b5106a",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "deep-navy": "#0A1128",
+                        "background": "#fbf9f4",
+                        "warm-sand": "#E8E2D6",
+                        "gold-leaf": "#D4AF37",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fbf9f4",
+                        "surface-variant": "#e4e2dd",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#dfbec8",
+                        "on-surface": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container": "#f0eee9",
+                        "action-pink": "#E11D74",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#d63384",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#1b1b1c",
+                        "surface-dim": "#dbdad5",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffb0cc",
+                        "tertiary": "#5e5e5d",
+                        "inverse-surface": "#30312e",
+                        "secondary-fixed": "#ffdf99",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "surface": "#fbf9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "2rem",
+                        "stack-xs": "0.5rem",
+                        "stack-sm": "1rem",
+                        "gutter": "1.5rem",
+                        "margin-desktop": "5rem",
+                        "margin-mobile": "1rem",
+                        "stack-lg": "4rem",
+                        "max-width": "1280px",
+                        "stack-xl": "8rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Epilogue"],
+                        "body-lg": ["Manrope"],
+                        "headline-sm": ["Epilogue"],
+                        "sub-header-italic": ["Epilogue"],
+                        "display-hero-mobile": ["Epilogue"],
+                        "label-caps": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-hero": ["Epilogue"],
+                        "headline-lg": ["Epilogue"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "sub-header-italic": ["20px", { "lineHeight": "28px", "fontWeight": "400", "fontStyle": "italic" }],
+                        "display-hero-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700", "textTransform": "uppercase" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed antialiased">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md docked full-width top-0 sticky z-50 transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-max-width mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight flex items-center gap-2" href="#">
+                The Mentorship Academy
+            </a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed border-b-2 border-gold-leaf pb-1 hover:text-primary-container dark:hover:text-primary-fixed-dim transition-all duration-300" href="#">The Spark</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:text-primary-container dark:hover:text-primary-fixed-dim transition-all duration-300" href="#">The Barriers</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:text-primary-container dark:hover:text-primary-fixed-dim transition-all duration-300" href="#">The Journey</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:text-primary-container dark:hover:text-primary-fixed-dim transition-all duration-300" href="#">The Impact</a>
+</div>
+<!-- Primary Action -->
+<div class="hidden md:block">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-action-pink text-on-primary rounded font-label-caps text-label-caps hover:bg-primary-container transition-colors duration-300 shadow-sm" href="#">
+                    Join Now
+                </a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="w-full overflow-hidden">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-stack-xl pb-stack-xl px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10 w-full">
+<!-- Text Content -->
+<div class="md:col-span-6 flex flex-col items-start gap-stack-md z-20">
+<div class="flex flex-col">
+<span class="font-sub-header-italic text-sub-header-italic text-gold-leaf mb-2">Mentorship Elevates</span>
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-deep-navy mb-4">
+                            Your network is <br/>
+<span class="text-primary">Your Networth</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                            To build a pool and pipeline of young women leaders through transformative mentorship.
+                        </p>
+</div>
+<div class="flex gap-4">
+<a class="px-8 py-4 bg-primary text-on-primary rounded font-label-caps text-label-caps hover:bg-action-pink transition-colors" href="#">
+                            The Spark
+                        </a>
+</div>
+</div>
+<!-- Image / Visual -->
+<div class="md:col-span-6 relative mt-stack-lg md:mt-0 flex justify-center md:justify-end">
+<div class="relative w-full max-w-lg aspect-square hero-fallback-shape overflow-hidden bg-warm-sand flex items-center justify-center">
+<img class="object-cover w-full h-full" data-alt="A portrait of diverse, confident young women standing together in a bright, modern corporate environment, embodying leadership and empowerment. Light, sophisticated color palette with pink and gold accents." src="https://lh3.googleusercontent.com/aida/AEtjO1VtUxttqWqCD_DbLhZVbNjyBCAX4KioxaEmOV76dXxYvzWuzuqFQbyyGyiAb44dHVfqgzS9W6mszcdp6MbuSnPeLgfvYUoIiy5dCRqPMfQYu29_qgwJnRwaEIzMqwnIJ5aPSunzg9bcEvjSBZL62vqUTemQvLTNMT1LeErJDTGk9gmBdM9kyJqk0UyNyvfbmdofQNSW-tQXr5uqWAAoxZbEh0IgKacgnqwDKPZ0ch0Arjo1RTjNtiB5GNFQ"/>
+</div>
+<!-- Decorative Floating Elements -->
+<div class="absolute -bottom-8 -left-8 w-32 h-32 bg-primary-fixed-dim/30 rounded-full blur-2xl"></div>
+<div class="absolute -top-8 -right-8 w-40 h-40 bg-secondary-fixed/40 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Intro / Welcome Section (Bento Grid Style) -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-max-width mx-auto">
+<div class="text-center mb-stack-lg max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Welcome to The Mentorship Academy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        The Academy offers an online mentorship program (E-Mentorship) for young women, may they be employed, unemployed or self-employed.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Vision Card -->
+<div class="bg-warm-sand p-8 rounded-lg flex flex-col gap-4 border border-outline-variant/30 hover:border-gold-leaf transition-colors group">
+<div class="w-12 h-12 rounded-full bg-surface flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">Vision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                            To build a pool and pipeline of young women leaders through transformative mentorship.
+                        </p>
+</div>
+<!-- Mission Card -->
+<div class="bg-surface-container p-8 rounded-lg flex flex-col gap-4 border border-transparent hover:border-primary-pink transition-colors group">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">Mission</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                            Address barriers to leadership for young women in South Africa and Africa.
+                        </p>
+</div>
+<!-- Objective Card -->
+<div class="bg-secondary-fixed/20 p-8 rounded-lg flex flex-col gap-4 border border-outline-variant/30 hover:border-gold-leaf transition-colors group">
+<div class="w-12 h-12 rounded-full bg-surface flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="track_changes">track_changes</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">Objective</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                            To create a young-adult E-Mentorship platform and unleash hidden leadership talent.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Asymmetric Narrative Section -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-background overflow-hidden relative">
+<div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<!-- Image Left Offset -->
+<div class="md:col-span-7 relative z-10">
+<div class="aspect-[4/3] rounded-lg overflow-hidden relative shadow-sm">
+<img class="object-cover w-full h-full" data-alt="A candid, warm photograph of a mentor and mentee engaged in a deep conversation in a bright, modern cafe setting. Natural lighting, minimalist aesthetic with touches of gold and soft pink." src="https://lh3.googleusercontent.com/aida/AEtjO1VQbc66-_GRTaQkMrNORQOcX2l2FTskNPp2Si801oSxKA5mTFu0NZdLxzDTvyA2Z5hNsIiKMoYzbm52Pa1jErwrYYGUwN76lh1_JNNovEZtXqQXoD5MbwwW0K10wFr-yzImMOuJ4H2waHj23kcXL88vP4omP4gNF4OcHTBOWImW9mggUaj3bTWsyK8RhxXCSM7EfUmWL3usmU9rqkyBxMSRRCLnlZ_QxFIo2sv75M-zpBTV3hTkoH8TwNfN"/>
+</div>
+<!-- Decorative block -->
+<div class="absolute -bottom-10 -right-10 w-2/3 h-2/3 bg-warm-sand rounded-lg -z-10"></div>
+</div>
+<!-- Text Right -->
+<div class="md:col-span-5 md:pl-8 mt-stack-md md:mt-0 flex flex-col gap-6">
+<span class="font-label-caps text-label-caps text-action-pink uppercase tracking-widest">The Barriers</span>
+<h2 class="font-headline-lg text-headline-lg text-deep-navy">We are Women.<br/>Let Women Lead.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Whilst piloting this program in South Africa, the aim is to ensure the rolling out of the program throughout the African Continent. To this, TMA will be partnering with strategic other NPO’s and relevant structures in other countries.
+                    </p>
+<p class="font-sub-header-italic text-sub-header-italic text-secondary">
+                        "We are all in. We are all together."
+                    </p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary hover:text-action-pink transition-colors border-b border-primary pb-1" href="http://mentorshipacademy.co.za/about/">
+                            Learn More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest full-width relative border-t border-outline-variant/20 mt-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-margin-mobile md:px-margin-desktop py-stack-lg max-w-max-width mx-auto">
+<!-- Brand & Copyright -->
+<div class="md:col-span-1 flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">
+                    The Mentorship Academy
+                </span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">
+                    © 2024 The Mentorship Academy. Empowering the next generation of female leaders.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-on-surface mb-2">Program</span>
+<a class="font-body-md text-body-md text-primary font-bold hover:text-gold-leaf transition-colors duration-200" href="#">The Spark</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out hover:text-gold-leaf" href="#">The Barriers</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out hover:text-gold-leaf" href="#">The Journey</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out hover:text-gold-leaf" href="#">The Impact</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-on-surface mb-2">Legal</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out hover:text-gold-leaf" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 ease-in-out hover:text-gold-leaf" href="#">Contact</a>
+</div>
+<!-- Action -->
+<div class="flex flex-col gap-3 items-start">
+<span class="font-label-caps text-label-caps text-on-surface mb-2">Connect</span>
+<a class="inline-flex items-center justify-center px-4 py-2 border border-gold-leaf text-deep-navy rounded font-label-caps text-label-caps hover:bg-gold-leaf hover:text-white transition-colors duration-300" href="#">
+                    Apply Now
+                </a>
+</div>
+</div>
+</footer>
+</body></html>

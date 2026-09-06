@@ -1,0 +1,6 @@
+Tma/my-app/node_modules/
+Tma/my-app/dist/
+Tma/my-app/Tma/
+Tma/my-app/.env
+Tma/my-app/.env.*
+!Tma/my-app/.env.example

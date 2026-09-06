@@ -1,0 +1,123 @@
+.coming-soon-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 3rem 1.5rem;
+  background-color: #fcfbf9;
+}
+
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  gap: 2.5rem;
+}
+
+/* Row 1 Styles */
+.coming-soon-row-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 650px;
+}
+
+.coming-soon-badge {
+  background-color: #f3e8ff;
+  color: #a21caf;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.coming-soon-title {
+  font-family: 'DM Serif Display', serif, sans-serif;
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Row 2 Styles: Full Width Image */
+.coming-soon-row-image {
+  width: 100%;
+  max-height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+.coming-soon-row-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Row 3 Styles: Buttons */
+.coming-soon-row-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cs-btn {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.cs-btn-primary {
+  background-color: #111827;
+  color: #ffffff;
+  border: 2px solid #111827;
+}
+
+.cs-btn-primary:hover {
+  background-color: #374151;
+  border-color: #374151;
+}
+
+.cs-btn-secondary {
+  background-color: transparent;
+  color: #111827;
+  border: 2px solid #d1d5db;
+}
+
+.cs-btn-secondary:hover {
+  border-color: #111827;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  .coming-soon-title {
+    font-size: 2.5rem;
+  }
+
+  .coming-soon-row-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cs-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

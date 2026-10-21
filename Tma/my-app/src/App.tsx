@@ -20,6 +20,7 @@ import './FooterSpacing.css';
 import './MentorGrid.css';
 import './AcademyBento.css';
 import './BentoComplete.css';
+import './ContactForm.css';
 
 export default function App() {
   return <BrowserRouter><div className="app-container"><Navbar /><main className="main-content"><Routes>

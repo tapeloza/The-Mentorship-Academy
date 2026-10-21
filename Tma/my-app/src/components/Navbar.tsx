@@ -38,7 +38,7 @@ export function Navbar() {
       <NavLink to="/our-mentors" onClick={close}>Our Mentors</NavLink>
       <NavLink to="/contact" onClick={close}>Get in Touch</NavLink>
     </div>
-    <Link to="/contact" onClick={close} className="cta-button">Become a member</Link>
+    <Link to="/contact?interest=Joining%20a%20programme" onClick={close} className="cta-button">Become a member</Link>
     <button className="hamburger" onClick={() => setOpen(!open)} aria-label="Toggle navigation" aria-expanded={open}>{open ? '×' : '☰'}</button>
   </nav>;
 }

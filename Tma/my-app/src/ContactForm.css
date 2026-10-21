@@ -1,0 +1,26 @@
+.contact-layout .form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.contact-layout .form-error {
+  margin: 0;
+  padding: .8rem 1rem;
+  border-radius: .75rem;
+  background: #fff1f3;
+  color: #9f1747;
+  font-size: .9rem;
+}
+
+.contact-layout button:disabled {
+  cursor: wait;
+  opacity: .72;
+}
+
+.button-secondary {
+  margin-top: .75rem;
+}

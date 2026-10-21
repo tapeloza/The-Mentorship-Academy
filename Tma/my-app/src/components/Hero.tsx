@@ -25,7 +25,7 @@ export const Hero: React.FC = () => {
             <Link to="/our-story" className="hero-btn hero-btn-primary">
               Learn more
             </Link>
-            <Link to="/contact" className="hero-btn hero-btn-secondary">
+            <Link to="/contact?interest=Joining%20a%20programme" className="hero-btn hero-btn-secondary">
               Join Now
             </Link>
           </div>

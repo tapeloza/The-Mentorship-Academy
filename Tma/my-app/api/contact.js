@@ -30,30 +30,31 @@ export default async function handler(request, response) {
     return response.status(400).json({ message: 'Please enter your name, a valid email address and a short message.' });
   }
 
-  const { RESEND_API_KEY, CONTACT_FROM, CONTACT_RECIPIENT } = process.env;
-  if (!RESEND_API_KEY || !CONTACT_FROM || !CONTACT_RECIPIENT) {
-    console.error('Contact form environment variables are not configured.');
+  const recipient = clean(process.env.CONTACT_RECIPIENT, 254);
+  if (!validEmail(recipient)) {
+    console.error('CONTACT_RECIPIENT is not configured.');
     return response.status(503).json({ message: 'The contact form is being set up. Please email hello@mentorshipacademy.co.za instead.' });
   }
 
   try {
-    const emailResponse = await fetch('https://api.resend.com/emails', {
+    const formSubmitResponse = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipient)}`, {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${RESEND_API_KEY}`,
+        Accept: 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: CONTACT_FROM,
-        to: [CONTACT_RECIPIENT],
-        reply_to: email,
-        subject: `New Academy enquiry from ${name.replace(/[\r\n]/g, ' ')}`,
-        text: `Name: ${name}\nEmail: ${email}\nInterest: ${interest || 'Not specified'}\n\nMessage:\n${message}`,
+        name,
+        email,
+        interest: interest || 'Not specified',
+        message,
+        _subject: `New Academy enquiry from ${name.replace(/[\r\n]/g, ' ')}`,
+        _template: 'table',
       }),
     });
 
-    if (!emailResponse.ok) {
-      console.error('Email provider rejected contact form submission:', await emailResponse.text());
+    if (!formSubmitResponse.ok) {
+      console.error('FormSubmit rejected contact form submission:', await formSubmitResponse.text());
       return response.status(502).json({ message: 'We could not send your message just now. Please try again or email us directly.' });
     }
 

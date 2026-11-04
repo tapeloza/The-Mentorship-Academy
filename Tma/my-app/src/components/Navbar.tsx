@@ -28,7 +28,7 @@ export function Navbar() {
   const close = () => { setOpen(false); setExploreOpen(false); };
   return <nav className="navbar">
     <Link to="/" onClick={close}><img src={logo} className="logo-img" alt="The Mentorship Academy" /></Link>
-    <div className={`nav-links ${open ? 'open' : ''}`}>
+    <div className="nav-links desktop-nav-links">
       <NavLink to="/our-story" onClick={close}>Our Story</NavLink>
       <div className="dropdown-container" onMouseEnter={() => setExploreOpen(true)} onMouseLeave={() => setExploreOpen(false)}>
         <button className="dropdown-trigger" onClick={() => setExploreOpen(!exploreOpen)} aria-expanded={exploreOpen}>Explore <span>▾</span></button>
@@ -40,6 +40,24 @@ export function Navbar() {
       <NavLink to="/contact" onClick={close}>Get in Touch</NavLink>
     </div>
     <Link to="/contact?interest=Joining%20a%20programme" onClick={close} className="cta-button">Become a member</Link>
-    <button className="hamburger" onClick={() => setOpen(!open)} aria-label="Toggle navigation" aria-expanded={open}>{open ? '×' : '☰'}</button>
+    <button className="hamburger" onClick={() => { if (open) close(); else { setExploreOpen(false); setOpen(true); } }} aria-label="Toggle navigation" aria-expanded={open}>{open ? '×' : '☰'}</button>
+    <div className={`mobile-nav ${open ? 'open' : ''}`} aria-hidden={!open}>
+      <div className={`mobile-nav-panels ${exploreOpen ? 'show-explore' : ''}`}>
+        <div className="mobile-nav-panel mobile-nav-main">
+          <NavLink to="/our-story" onClick={close}>Our Story</NavLink>
+          <button className="mobile-explore-button" onClick={() => setExploreOpen(true)}>Explore <span>→</span></button>
+          <NavLink to="/our-mentors" onClick={close}>Our Mentors</NavLink>
+          <NavLink to="/contact" onClick={close}>Get in Touch</NavLink>
+          <Link to="/contact?interest=Joining%20a%20programme" onClick={close} className="mobile-member-link">Become a member</Link>
+        </div>
+        <div className="mobile-nav-panel mobile-nav-explore">
+          <button className="mobile-back-button" onClick={() => setExploreOpen(false)}>← Back to menu</button>
+          <div className="mobile-explore-intro"><p>Explore the Academy</p><span>Choose a path to grow, connect and lead with confidence.</span></div>
+          <div className="mobile-explore-list">
+            {exploreItems.map((item) => <Link key={item.title} to={item.to} className="mobile-explore-item" onClick={close}><span className="mega-icon"><MenuIcon type={item.icon} /></span><span><strong>{item.title}</strong><small>{item.text}</small></span><i>→</i></Link>)}
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>;
 }

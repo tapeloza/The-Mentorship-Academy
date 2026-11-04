@@ -9,7 +9,7 @@ const exploreItems = [
   { to: '/events', icon: 'calendar', title: 'Events', text: 'Join our upcoming gatherings and workshops.' },
   { to: '/news', icon: 'news', title: 'News', text: 'Read the latest stories, updates and features.' },
   { to: '/mentees', icon: 'community', title: 'Mentees', text: 'Meet the women shaping what comes next.' },
-  { to: '/contact', icon: 'community', title: 'Memberships', text: 'Become part of our thriving leadership network.' },
+  { to: '/contact?interest=Becoming%20a%20member', icon: 'community', title: 'Memberships', text: 'Become part of our thriving leadership network.' },
 ];
 
 function MenuIcon({ type }: { type: string }) {
@@ -39,7 +39,7 @@ export function Navbar() {
       <NavLink to="/our-mentors" onClick={close}>Our Mentors</NavLink>
       <NavLink to="/contact" onClick={close}>Get in Touch</NavLink>
     </div>
-    <Link to="/contact?interest=Joining%20a%20programme" onClick={close} className="cta-button">Become a member</Link>
+    <Link to="/contact?interest=Becoming%20a%20member" onClick={close} className="cta-button">Become a member</Link>
     <button className="hamburger" onClick={() => { if (open) close(); else { setExploreOpen(false); setOpen(true); } }} aria-label="Toggle navigation" aria-expanded={open}>{open ? '×' : '☰'}</button>
     <div className={`mobile-nav ${open ? 'open' : ''}`} aria-hidden={!open}>
       <div className={`mobile-nav-panels ${exploreOpen ? 'show-explore' : ''}`}>
@@ -48,7 +48,7 @@ export function Navbar() {
           <button className="mobile-explore-button" onClick={() => setExploreOpen(true)}>Explore <span>→</span></button>
           <NavLink to="/our-mentors" onClick={close}>Our Mentors</NavLink>
           <NavLink to="/contact" onClick={close}>Get in Touch</NavLink>
-          <Link to="/contact?interest=Joining%20a%20programme" onClick={close} className="mobile-member-link">Become a member</Link>
+          <Link to="/contact?interest=Becoming%20a%20member" onClick={close} className="mobile-member-link">Become a member</Link>
         </div>
         <div className="mobile-nav-panel mobile-nav-explore">
           <button className="mobile-back-button" onClick={() => setExploreOpen(false)}>← Back to menu</button>

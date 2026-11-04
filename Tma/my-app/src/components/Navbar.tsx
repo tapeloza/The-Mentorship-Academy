@@ -8,6 +8,7 @@ const exploreItems = [
   { to: '/programs', icon: 'book', title: 'Our Programs', text: 'Discover growth and mentorship pathways.' },
   { to: '/events', icon: 'calendar', title: 'Events', text: 'Join our upcoming gatherings and workshops.' },
   { to: '/news', icon: 'news', title: 'News', text: 'Read the latest stories, updates and features.' },
+  { to: '/mentees', icon: 'community', title: 'Mentees', text: 'Meet the women shaping what comes next.' },
   { to: '/contact', icon: 'community', title: 'Memberships', text: 'Become part of our thriving leadership network.' },
 ];
 
